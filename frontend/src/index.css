@@ -1,0 +1,319 @@
+:root {
+  font-family: Arial, sans-serif;
+  color: white;
+  background: #07111f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  width: min(850px, calc(100% - 32px));
+  min-height: 100vh;
+
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 48px;
+  text-align: center;
+}
+
+section,
+form {
+  margin-top: 24px;
+  padding: 22px;
+
+  border: 1px solid #24354d;
+  border-radius: 14px;
+
+  background: #0d1a2b;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+
+  border: 1px solid #344962;
+  border-radius: 9px;
+
+  background: #07111f;
+  color: white;
+
+  outline: none;
+}
+
+input:focus {
+  border-color: #4c8dff;
+}
+
+button {
+  margin-top: 14px;
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #4c8dff;
+  color: white;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3978dd;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.error-message {
+  padding: 13px;
+
+  border: 1px solid #993e50;
+  border-radius: 9px;
+
+  background: #35131b;
+  color: #ff9cad;
+}
+
+.result-box pre {
+  max-height: 500px;
+  overflow: auto;
+
+  padding: 18px;
+
+  border-radius: 10px;
+
+  background: #050c16;
+  color: #c9d8ee;
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.risk-card {
+  margin-top: 26px;
+}
+
+.risk-card-header {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.score-meter {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.score-circle {
+  --score-angle: 0deg;
+
+  width: 130px;
+  height: 130px;
+  padding: 10px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: conic-gradient(
+    #4c8dff var(--score-angle),
+    #24354d 0deg
+  );
+}
+
+.score-circle.risk-medium {
+  background: conic-gradient(
+    #f5b942 var(--score-angle),
+    #24354d 0deg
+  );
+}
+
+.score-circle.risk-high {
+  background: conic-gradient(
+    #ff5e75 var(--score-angle),
+    #24354d 0deg
+  );
+}
+
+.score-circle-inner {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #07111f;
+}
+
+.score-circle-inner strong {
+  font-size: 34px;
+}
+
+.score-circle-inner span {
+  color: #93a3b8;
+  font-size: 12px;
+}
+
+.score-text p {
+  margin: 0;
+  color: #93a3b8;
+}
+
+.score-text h2 {
+  margin: 5px 0 0;
+}
+
+.small-label {
+  margin: 0;
+  color: #75a6ff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.threat-details h2 {
+  margin: 8px 0;
+}
+
+.threat-details > p:last-child {
+  color: #aab6c7;
+  line-height: 1.6;
+}
+
+.analyzed-url {
+  margin-top: 28px;
+  padding: 14px;
+
+  border: 1px solid #24354d;
+  border-radius: 10px;
+
+  background: #07111f;
+}
+
+.analyzed-url span {
+  color: #93a3b8;
+  font-size: 12px;
+}
+
+.analyzed-url p {
+  margin: 6px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.result-section {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #24354d;
+}
+
+.result-section h3 {
+  margin-top: 0;
+}
+
+.signal-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.signal-item {
+  padding: 9px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.signal-warning {
+  border: 1px solid #8f3f50;
+  background: #35131b;
+  color: #ff9cad;
+}
+
+.signal-safe {
+  border: 1px solid #286348;
+  background: #102b21;
+  color: #7ee2af;
+}
+
+.extra-signal {
+  margin-top: 14px;
+  padding: 12px;
+
+  border-radius: 9px;
+  background: #2a2413;
+  color: #f2cc75;
+}
+
+.breakdown-list {
+  display: grid;
+  gap: 10px;
+}
+
+.breakdown-item {
+  padding: 14px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  border: 1px solid #24354d;
+  border-radius: 10px;
+
+  background: #07111f;
+}
+
+.breakdown-item p {
+  margin: 6px 0 0;
+  color: #9eacbf;
+}
+
+.breakdown-item > span {
+  color: #ff8da0;
+  font-weight: 700;
+}
+
+.result-section li {
+  margin: 10px 0;
+  color: #c5cfdd;
+}
+
+.muted-text,
+.disclaimer {
+  color: #93a3b8;
+}
+
+.disclaimer {
+  margin-top: 25px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .risk-card-header {
+    grid-template-columns: 1fr;
+  }
+}
